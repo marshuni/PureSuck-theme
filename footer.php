@@ -101,6 +101,27 @@ $codeBlockSettings = Typecho_Widget::widget('Widget_Options')->codeBlockSettings
   }
 </script>
 
+<?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+  <script type = "text/javascript" >
+    // 使用Katex渲染数学公式
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [{
+            left: "$$",
+            right: "$$",
+            display: true
+        }, {
+            left: "$",
+            right: "$",
+            display: false
+        }],
+        ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"],
+        ignoredClasses: ["nokatex"]
+      });
+    });
+  </script>
+<?php endif; ?>
+
 <!-- 后台script标签 -->
 <?php if ($this->options->footerScript): ?>
   <?= $this->options->footerScript; ?>

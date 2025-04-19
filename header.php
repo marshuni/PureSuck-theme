@@ -122,12 +122,20 @@
     <link href="<?php $this->options->themeUrl('/css/PureSuck_Module.css'); ?>" rel="stylesheet">
     <link href="<?php $this->options->themeUrl('/css/aos.css'); ?>" rel="stylesheet">
     <link defer href="<?php $this->options->themeUrl('/css/MoxDesign.css'); ?>" rel="stylesheet">
+    <?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+        <link defer href="<?php $this->options->themeUrl('/katex.min.css'); ?>" rel="stylesheet"/>
+    <?php endif; ?>
     <!-- JS引入 -->
     <script defer src="<?php $this->options->themeUrl('/js/medium-zoom.min.js'); ?>"></script>
     <script defer src="<?php $this->options->themeUrl('/js/highlight.min.js'); ?>"></script>
     <script defer src="<?php $this->options->themeUrl('/js/PureSuck_Module.js'); ?>"></script>
     <script defer src="<?php $this->options->themeUrl('/js/OwO.min.js'); ?>"></script>
     <script defer src="<?php $this->options->themeUrl('/js/MoxDesign.js'); ?>"></script>
+    <?php if ($this->is('post') && $this->fields->isLatex == 1): ?>
+        <script defer src="<?php $this->options->themeUrl('/js/katex.min.js'); ?>"></script>
+        <script defer src="<?php $this->options->themeUrl('/js/auto-render.min.js'); ?>"></script>
+    <?php endif; ?>
+
     <!-- Pjax -->
     <?php if ($this->options->enablepjax == '1'): ?>
         <script defer src="<?php $this->options->themeUrl('/js/pjax.min.js'); ?>"></script>

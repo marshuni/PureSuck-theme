@@ -10,6 +10,12 @@ function themeFields($layout)
     $desc = new Typecho_Widget_Helper_Form_Element_Text('desc', NULL, NULL, _t('文章摘要'), _t('文章摘要信息，会显示在首页文章卡片内，为空则默认显示文章开头一段文字'));
     $desc->input->setAttribute('class', 'text w-100');
     $layout->addItem($desc);
+
+    $isLatex = new Typecho_Widget_Helper_Form_Element_Radio('isLatex', 
+	array(1 => _t('启用'),
+	0 => _t('关闭')),
+	0, _t('LaTeX 渲染'), _t('默认关闭增加网页访问速度，如文章内存在LaTeX语法则需要启用'));
+	$layout->addItem($isLatex);
 }
 
 function themeInit($archive)

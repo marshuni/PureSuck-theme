@@ -2376,3 +2376,8 @@ input:-webkit-autofill:active {
 	color: #888;
 	display: inline-block;
 }
+
+/* 隐藏渲染的katex-html标签 */
+.katex-html {
+    display: none !important;
+}
