@@ -19,17 +19,9 @@ $this->need('header.php');
         <?php
         $hasImg = $this->fields->img ? true : false;
         ?>
-        <article class="post <?= $hasImg ? 'post--photo post--cover' : 'post--text'; ?> post--index main-item">
+        <article class="card <?= $hasImg ? 'post--photo post--cover' : 'post--text'; ?> post--index main-item">
             <div class="post-inner" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <header class="post-item post-header  <?= $hasImg ? 'no-bg' : ''; ?>">
-                    <div class="wrapper post-wrapper">
-                        <div class="avatar post-author">
-                            <img src="<?= $this->options->authorAvatar ?: $this->options->themeUrl('images/avatar.png'); ?>" alt="作者头像" class="avatar-item avatar-img">
-                            <span class="avatar-item">
-                                <?php $this->author(); ?>
-                            </span>
-                        </div>
-                    </div>
+                <header class="card-item card-header  <?= $hasImg ? 'no-bg' : ''; ?>">
                 </header>
 
                 <!-- 大图样式 -->
@@ -40,9 +32,9 @@ $this->need('header.php');
                 <?php endif; ?>
 
                 <!-- 文章作者 -->
-                <section class="post-item post-body">
+                <section class="card-item card-body">
                     <div class="wrapper post-wrapper">
-                        <h1 class="post-title">
+                        <h1 class="card-title">
                             <a href="<?php $this->permalink() ?>" title="<?php $this->title() ?>">
                                 <?php $this->title() ?>
                             </a>
@@ -53,13 +45,13 @@ $this->need('header.php');
                             <?php if ($this->fields->desc): ?>
                                 <?= $this->fields->desc; ?>
                             <?php else: ?>
-                                <?php $this->excerpt(200, ''); ?>
+                                <?php $this->excerpt(80, ''); ?>
                             <?php endif; ?>
                         </p>
                     </div>
                 </section>
 
-                <footer class="post-item post-footer">
+                <footer class="card-item card-footer">
                     <div class="wrapper post-wrapper">
                         <div class="meta post-meta">
                             <a itemprop="datePublished" href="<?php $this->permalink() ?>" class="icon-ui icon-ui-date meta-item meta-date">
