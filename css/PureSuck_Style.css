@@ -2148,4 +2148,10 @@ input:-webkit-autofill:active {
 
 .pace .pace-progress {
 	background: var(--themecolor) !important;
+
+/* 隐藏渲染的katex-html标签 */
+}
+
+.katex-html {
+    display: none !important;
 }
