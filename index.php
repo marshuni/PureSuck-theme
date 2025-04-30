@@ -19,17 +19,10 @@ $this->need('header.php');
         <?php
         $hasImg = $this->fields->img ? true : false;
         ?>
-        <article class="card <?= $hasImg ? 'post--photo post--cover' : 'post--text'; ?> post--index main-item">
+        <article class="card post--text post--index main-item">
             <div class="post-inner" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-                <header class="card-item card-header  <?= $hasImg ? 'no-bg' : ''; ?>">
+                <header class="card-item card-header">
                 </header>
-
-                <!-- 大图样式 -->
-                <?php if ($hasImg): ?>
-                    <figure class="post-media <?= $this->is('post') ? 'single' : ''; ?>">
-                        <img data-aos="zoom-out" data-aos-anchor-placement="top-bottom" itemprop="image" src="<?php $this->fields->img(); ?>" alt="头图" width="2000" height="800">
-                    </figure>
-                <?php endif; ?>
 
                 <!-- 文章作者 -->
                 <section class="card-item card-body">
