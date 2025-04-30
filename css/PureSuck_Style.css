@@ -310,15 +310,16 @@ h2 {
 
 h2::before {
 	content: "";
-	right: 3px;
+	right: 6px;
 	display: block;
-	width: 8px;
-	height: 8px;
-	background-image: linear-gradient(var(--themecolor), transparent);
-	opacity: .65;
+
+	width: 100%;
+	height: 0.45em;
+	top: 1.65em;
+
+	background-color: var(--themecolor);
+	opacity: .25;
 	position: relative;
-	border-radius: 50%;
-	top: 30px;
 }
 
 .h3,
@@ -344,8 +345,8 @@ h3::before {
 	display: block;
 	width: 8px;
 	height: 8px;
-	background-image: linear-gradient(var(--themecolor), transparent);
-	opacity: .55;
+	background-color: var(--themecolor);
+	opacity: .25;
 	position: relative;
 	border-radius: 50%;
 	top: 30px;
@@ -397,12 +398,6 @@ small {
 		line-height: 40px
 	}
 
-	h2::before {
-		width: 10px;
-		height: 10px;
-		top: 35px;
-	}
-
 	.h3,
 	h3 {
 		line-height: 36px
@@ -436,12 +431,6 @@ small {
 	.h2,
 	h2 {
 		line-height: 44px
-	}
-
-	h2::before {
-		width: 12px;
-		height: 12px;
-		top: 40px;
 	}
 
 	h3::before {
