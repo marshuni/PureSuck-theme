@@ -339,7 +339,8 @@ h3::before {
 .p,
 body {
 	font-size: 1rem;
-	line-height: 1.85
+	line-height: 1.85;
+	text-align: justify
 }
 
 .header-about,
