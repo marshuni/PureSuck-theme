@@ -413,42 +413,6 @@
             }
         ]
     },
-    "MoXiify": {
-        "type": "image",
-        "width": "48px",
-        "container": [
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_Wink.gif",
-                "text": "Wink",
-                "input": ":#(MoXiify_Wink)"
-            },
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_Why.gif",
-                "text": "疑问",
-                "input": ":#(MoXiify_Why)"
-            },
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_SpeechLess.gif",
-                "text": "沉默",
-                "input": ":#(MoXiify_SpeechLess)"
-            },
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_Smile.gif",
-                "text": "微笑",
-                "input": ":#(MoXiify_Smile)"
-            },
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_Sleep.gif",
-                "text": "犯困",
-                "input": ":#(MoXiify_Sleep)"
-            },
-            {
-                "icon": "/usr/themes/PureSuck/images/owo/moxi/MoXi_Silent.gif",
-                "text": "无语",
-                "input": ":#(MoXiify_Silent)"
-            }
-        ]
-    },
     "BiliBili": {
         "type": "image",
         "width": "32px",
