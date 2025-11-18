@@ -93,7 +93,8 @@
     </script>
     <!-- Style CSS -->
     <link rel="stylesheet" href="<?= $this->options->themeUrl('css/fontello.css'); ?>">
-    <link rel="stylesheet" href="<?= $this->options->themeUrl('css/PureSuck_Style.css'); ?>">
+    <link rel="stylesheet" href="<?= $this->options->themeUrl('css/style.css'); ?>">
+    <!-- <link rel="stylesheet" href="<?= $this->options->themeUrl('css/PureSuck_Style.css'); ?>"> -->
     <!-- 主题样式微调 -->
     <!-- 标题线条 -->
     <?php if ($this->options->postTitleAfter != 'off'): ?>

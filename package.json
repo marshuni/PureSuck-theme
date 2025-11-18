@@ -1,0 +1,26 @@
+{
+  "name": "puresuck",
+  "version": "1.0.0",
+  "description": "![Banner](https://s2.loli.net/2024/08/05/M4FTuyI2b7aU3Ag.png)\r # PureSuck-Theme\r ![Static Badge](https://img.shields.io/github/v/release/MoXiaoXi233/PureSuck-theme)\r ![Static Badge](https://img.shields.io/badge/LICENSE-MIT-green)\r ![Static Badge](https://img.shields.io/badge/AUTHOR-MoXiify-pink)  \r PureSuck，干净，纯洁，淡雅朴素的typecho主题。  \r 由于是第一次正经意义上的做一个项目，遇到问题欢迎反馈解决。  \r 另外主题样式和基调还在不断迭代中，可能会遇到版本更新后样式发生变化的情况  \r 感谢你的使用！\r ## 外观\r 可以前往[希记](https://note.moxiify.cn)查看最新版演示效果  \r 主题本身有四种强调色可以选择，同时内置几种多彩的小组件（欢迎issues提交建议）  \r ![PureSuck](https://s2.loli.net/2025/07/13/BvewG6DAnUrF7Pi.png)\r ## TODO\r - [x] Pjax\r - [ ] 重新设计组件\r - [ ] 精简代码，优化性能\r - [ ] 统一设计语言\r ## 特性\r - 代码高亮   \r - 细微动效设计  \r - **界面简约干净**  \r - 有一定自定义空间  \r - **阅读体验良好**  \r - TOC目录树  \r - 头图功能  \r - **流畅！**  \r - 内置几个小组件  \r - ~~作者人比较好，愿意陪你瞎扯~~",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass scss/style.scss css/style.css",
+    "watch": "sass --watch scss/style.scss:css/style.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marshuni/PureSuck-theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/marshuni/PureSuck-theme/issues"
+  },
+  "homepage": "https://github.com/marshuni/PureSuck-theme#readme",
+  "devDependencies": {
+    "sass": "^1.94.1"
+  }
+}

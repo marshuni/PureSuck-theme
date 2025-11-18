@@ -1,0 +1,8 @@
+/* picgrid 占位（原始 CSS 有较少相关规则），如需可在此扩展 */
+.pic-grid { column-count: 3; column-gap: 10px }
+.pic-grid figure { break-inside: avoid; margin-bottom: 10px }
+.pic-grid img { width: 100%; height: auto; display: block }
+
+@media (max-width: 579px) { .pic-grid { column-count: 2 } }
+
+

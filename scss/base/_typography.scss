@@ -1,0 +1,173 @@
+@use '../mixin' as *;
+hr {
+	position: relative;
+	width: calc(100% - 4px);
+	height: .125rem;
+	border: none;
+	background: var(--card-color) repeating-linear-gradient(-45deg, var(--themecolor), var(--themecolor) 0.25rem, transparent 0.25rem, transparent 0.5rem);
+	box-sizing: content-box;
+	overflow: visible;
+}
+
+.root,
+html {
+	font-size: 15px;
+
+	@include respond(sm) {
+		font-size: 16px;
+	}
+
+	@include respond(xxl) {
+		font-size: 17px;
+	}
+}
+
+/* headings */
+.h1,
+.post--link .post-body .post-wrapper>p:first-of-type,
+.post-title,
+h1 {
+	font-size: 1.75rem;
+	line-height: 40px;
+
+	@include respond(sm) {
+		font-size: 2rem;
+		line-height: 48px;
+	}
+
+	@include respond(xl) {
+		font-size: 2.215rem;
+		line-height: 56px;
+	}
+}
+
+.h2,
+h2 {
+	font-size: 1.5rem;
+	line-height: 36px;
+
+	@include respond(sm) {
+		line-height: 40px;
+	}
+
+	@include respond(xl) {
+		line-height: 44px;
+	}
+}
+
+h2::before {
+	content: "";
+	right: 6px;
+	display: block;
+	width: 100%;
+	height: 0.45em;
+	top: 40px;
+	background-color: var(--themecolor);
+	opacity: .25;
+	position: relative;
+}
+
+/* h3 and its marker */
+.h3,
+h3 {
+	font-size: 1.375rem;
+	line-height: 30px;
+
+	@include respond(sm) {
+		line-height: 36px;
+	}
+}
+
+h3::before {
+	content: "";
+	right: 3px;
+	display: block;
+	width: 8px;
+	height: 8px;
+	background-color: var(--themecolor);
+	opacity: .25;
+	position: relative;
+	border-radius: 50%;
+	top: 30px;
+
+	@include respond(sm) {
+		width: 9px;
+		height: 9px;
+	}
+
+	@include respond(xl) {
+		width: 10px;
+		height: 10px;
+		top: 34px;
+	}
+}
+
+/* smaller headings / titles */
+.comment-title,
+.h4,
+.h5,
+.h6,
+h4,
+h5,
+h6 {
+	font-size: 1.125rem;
+	line-height: 26px;
+}
+
+.comment-title,
+.h4,
+h4 {
+	@include respond(sm) {
+		font-size: 1.375rem;
+		line-height: 34px;
+	}
+}
+
+/* body / paragraphs */
+.p,
+body {
+	font-size: 1rem;
+	line-height: 1.85;
+	text-align: justify;
+}
+
+/* small text variants */
+.header-about,
+.header-form,
+.post-body [href^="#fn:"],
+.s1,
+small {
+	font-size: .875rem;
+}
+
+.avatar,
+.meta,
+.nav,
+.s2 {
+	font-size: .75rem;
+}
+
+.s3 {
+	font-size: .666rem;
+}
+
+@keyframes yellowflash-bg {
+	from { background: var(--themecolor); }
+	to { background: transparent; }
+}
+
+.footnotes :target { animation: yellowflash-bg 1s; }
+
+/* font-family + base text color */
+body,
+.post--cover .post-body .post-wrapper>p:first-child,
+.comment-title,
+h1,h2,h3,h4,h5,h6 {
+	font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+	font-weight: 400;
+	color: var(--text-color);
+}
+
+b, strong { font-weight: 600 }
+
+

@@ -1,0 +1,83 @@
+.avatar,
+.form,
+.form-input,
+.header-avatar,
+.list,
+.meta,
+.nav,
+.post-body [data-js~=embed],
+.post-body ol,
+.post-body ul,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+object,
+ol,
+p,
+pre,
+ul,
+.cp p {
+	margin-top: 0;
+	margin-bottom: 16px
+}
+
+.avatar {
+	position: relative;
+	display: table;
+	width: 100%;
+	line-height: 16px
+}
+
+.avatar:before { font-size: 32px; line-height: 32px }
+
+.avatar-item {
+	overflow: hidden;
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	max-width: 0;
+	margin-bottom: 0;
+	transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+}
+
+.avatar-item>* { display: table-row; overflow: hidden; text-overflow: ellipsis }
+
+.avatar-img { max-width: inherit; width: 34px; height: 34px }
+
+.avatar-img>* { display: block }
+
+.avatar-item+.avatar-item { padding-left: 8px }
+
+[data-js~=embed] { position: relative; padding: 0; margin-bottom: 0 }
+
+[data-js~=embed]>* { position: absolute; top: 0; left: 0; width: 100%; height: 100% }
+
+.post-body [href^="#fn:"] { margin-left: 1px; margin-right: 1px }
+
+.comment-title { font-weight: 800 }
+
+.avatar,
+.avatar:before { color: var(--text-color) }
+
+.avatar { text-transform: uppercase; letter-spacing: 2px }
+.avatar:hover { color: #999 }
+.avatar-title { color: inherit }
+.avatar-img { border-radius: 100% }
+
+.avatar-hover-effect { transition: all 0.3s ease; cursor: pointer; position: relative }
+.avatar-hover-effect:hover { transform: translateY(-3px); box-shadow: 0 0 0 3px var(--themecolor); opacity: 0.75 }
+.avatar-hover-effect:active { transform: translateY(0) scale(0.925) }
+.avatar-hover-effect::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.15); opacity: 0; transition: opacity 0.3s ease, transform 0.3s ease; pointer-events: none }
+
+/* el-avatar helpers already used by comments */
+.el-avatar--circle { border-radius: 50% }
+.el-avatar { align-items: center; box-sizing: border-box; color: var(--text2-color); display: inline-flex; font-size: 14px; height: 120px; justify-content: center; overflow: hidden; text-align: center; width: 120px }
+
+
+
+
+

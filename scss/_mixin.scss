@@ -1,0 +1,23 @@
+@use "breakpoints" as *;
+
+// mixins: 通用小工具
+@mixin clearfix() {
+	&::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+
+@mixin respond($size) {
+  $value: map-get($breakpoints, $size);
+
+  @if $value {
+    @media (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "No breakpoint named `#{$size}` found in \$breakpoints map.";
+  }
+}

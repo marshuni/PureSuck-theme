@@ -1,0 +1,93 @@
+@use '../mixin' as *;
+.header {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding-top: 24px;
+    padding-bottom: 12px;
+    text-align: center;
+    display: flex;
+
+    @include respond(md) {
+        position: sticky;
+        padding-top: 48px;
+        padding-right: 48px;
+        padding-bottom: 24px;
+        padding-left: 48px;
+    }
+
+    @include respond(lg) {
+        position: fixed;
+        width: 328px;
+        padding-top: 50px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        margin-right: -328px;
+    }
+
+    @include respond(xl) {
+        width: 344px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+        margin-right: -344px;
+        margin-left: -30px;
+    }
+}
+
+.sidebar-wrapper { 
+    max-width: 275px; 
+
+    @include respond(md) {
+        max-width: 606px;
+    }
+
+    @include respond(lg) {
+        max-width: 100%;
+    }
+}
+
+.header-item {
+    float: none;
+    display: table;
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.header-nav { 
+    padding-top: 16px; 
+
+    @include respond(md) {
+        padding-top: 0;
+    }
+}
+
+.header-form .form-input { 
+    margin-bottom: 0; 
+}
+
+.header-credit { 
+    display: none; 
+
+    @include respond(lg) {
+        display: block; 
+        font-size: .666rem; 
+        margin: 0; 
+        bottom: -40px; 
+    }
+
+    @include respond(xl) {
+        bottom: -56px; 
+    }
+}
+
+.header-title + .header-nav {
+    @include respond(md) {
+        padding-top: 0;
+    }
+
+    .header-nav .nav-item:first-child a:before { 
+        display: none; 
+    }
+}
+

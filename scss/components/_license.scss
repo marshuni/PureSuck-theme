@@ -1,0 +1,43 @@
+/* LICENCE 卡片样式 */
+.license-info-card {
+	padding: 20px 30px;
+	background-color: var(--background-color);
+	box-shadow: 0 0 6px #00000008;
+	border-radius: 0.75rem;
+	position: relative;
+	border: 1px solid var(--border-color);
+	overflow: hidden;
+}
+
+.license-info-title { font-size: 1.5em; font-weight: bold }
+
+.license-info-meta { display: flex; justify-content: flex-start; align-items: flex-start; color: var(--text2-color); gap: 25px }
+
+.license-info-meta div { display: flex; flex-direction: column }
+
+.license-info-meta div span { margin-bottom: 5px }
+
+.cc-icon::before {
+	content: '\e819';
+	font-family: 'fontello';
+	font-size: 10em;
+	opacity: .55;
+	color: var(--border-color);
+	position: absolute;
+	right: 40px;
+	top: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+
+.license-info-card * { z-index: 1 }
+
+@media (max-width: 579px) {
+	.license-info-card { padding: 15px; border-radius: 0.5rem; font-size: 0.85rem }
+	.license-info-title { font-size: 1.2em }
+	.license-info-meta { gap: 10px }
+	.license-info-meta div span { margin-bottom: 0 }
+	.cc-icon::before { right: 20px }
+}
+
+

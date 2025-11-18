@@ -1,0 +1,224 @@
+@use '../mixin' as *;
+
+.post {
+    float: left;
+    width: 100%;
+    margin-bottom: 24px;
+
+    @include respond(sm) {
+        margin-bottom: 32px;
+    }
+    @include respond(md) {
+        margin-bottom: 52px;
+    }
+    @include respond(xl) {
+        margin-bottom: 40px;
+    }
+    @include respond(xxl) {
+        margin-bottom: 55px;
+    }
+}
+
+.post-inner {
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+}
+
+.post-item {
+    float: left;
+    width: 100%;
+    padding: 16px;
+
+    @include respond(sm) {
+        width: 100%;
+        padding: 24px;
+    }
+    @include respond(md) {
+        width: 100%;
+        padding: 45px;
+    }
+    @include respond(xl) {
+        width: 100%;
+        padding: 35px 45px;
+    }
+    @include respond(xxl) {
+        width: 100%;
+        padding: 45px;
+    }
+}
+
+.post-wrapper {
+    max-width: 275px;
+
+    @include respond(sm) {
+        max-width: 436px;
+    }
+    @include respond(md) {
+        max-width: 678px;
+    }
+    @include respond(xl) {
+        max-width: 848px;
+    }
+}
+
+.post-body {
+    margin-top: -16px;
+
+    @include respond(sm) {
+        margin-top: -24px;
+    }
+    @include respond(md) {
+        margin-top: -55px;
+    }
+    @include respond(xl) {
+        margin-top: -56px;
+    }
+}
+
+.post--link .post-body .post-wrapper > p:first-of-type,
+.post-title {
+    margin-top: -7px;
+    margin-bottom: 9px;
+
+    @include respond(sm) {
+        margin-bottom: 17px;
+    }
+    @include respond(md) {
+        margin-bottom: 6px;
+    }
+    @include respond(xl) {
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+    @include respond(xxl) {
+        margin-top: -10px;
+    }
+}
+
+.post-more {
+    float: left;
+    width: 100%;
+
+    @include respond(sm) {
+        margin-top: 0;
+    }
+    @include respond(md) {
+        margin-top: 16px;
+    }
+    @include respond(xl) {
+        margin-top: 8px;
+    }
+    @include respond(xxl) {
+        margin-top: 24px;
+    }
+}
+
+.post-title + .post-more {
+    @include respond(sm) {
+        margin-top: -8px;
+    }
+}
+
+.post-excerpt:after {
+    content: '';
+}
+
+.post-meta .meta-item.icon::before {
+    font-size: 22px;
+    transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+}
+
+.post-comments .post-wrapper:before,
+.post-footer .post-wrapper:before {
+    @include respond(sm) {
+        top: -24px;
+    }
+    @include respond(md) {
+        top: -48px;
+    }
+    @include respond(xl) {
+        top: -24px;
+    }
+    @include respond(xxl) {
+        top: -35px;
+    }
+}
+
+.post-footer {
+    @include respond(md) {
+        margin-top: -30px;
+    }
+}
+
+
+.post--cover .post-header { position: absolute; z-index: 5; top: 0; right: 0; left: 0 }
+.post--cover .post-body { margin-top: 0 }
+
+.post--link .post-body .post-wrapper>p:first-of-type { word-break: break-word; hyphens: auto }
+
+.post--small { position: relative; height: 0; width: 100%; padding-top: 100% }
+.post--small .post-inner { position: absolute; top: 0; right: 0; bottom: 0; left: 0; width: auto; height: auto }
+.post--small .post-wrapper { max-width: 100% }
+
+@include respond(md) {
+    .post--small+.post--small { margin-bottom: 26px }
+    .post--small, .post--small+.post--small:last-child { margin-bottom: -26px }
+    .post--small .post-inner { right: 26px; bottom: 26px }
+    .post--small+.post--small .post-inner { right: 0; left: 26px }
+    .post--small .post-item { padding: 24px }
+}
+
+@include respond(xl) {
+    .post--small+.post--small { margin-bottom: 41px }
+    .post--small, .post--small+.post--small:last-child { margin-bottom: -41px }
+    .post--small .post-inner { right: 41px; bottom: 41px }
+    .post--small+.post--small .post-inner { left: 41px }
+    .post--small .post-item { padding: 16px }
+}
+
+@include respond(xxl) {
+    .post--small+.post--small { margin-bottom: 57px }
+    .post--small, .post--small+.post--small:last-child { margin-bottom: -57px }
+    .post--small .post-inner { right: 57px; bottom: 57px }
+    .post--small+.post--small .post-inner { left: 57px }
+    .post--small .post-item { padding: 32px }
+}
+
+.post--link .post-title a, a { color: var(--themecolor) }
+.post--link .post-title a:hover, a:hover { color: var(--themehovercolor) }
+
+.inner-post-wrapper a:not(.friendsboard-list a):not(.meta.post-meta a):not(.cloud-container a) {
+	border-radius: 0.35rem; position: relative; display: inline-block; overflow-wrap: break-word; text-decoration: none; max-width: 100%;
+}
+.inner-post-wrapper a:not(.friendsboard-list a):not(.meta.post-meta a):not(.cloud-container a)::before {
+	content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: var(--themecolor); border-radius: 0.4rem; transform: scale(0.8); transition: all 0.3s ease; opacity: 0;
+}
+.inner-post-wrapper a:not(.friendsboard-list a):not(.meta.post-meta a):not(.cloud-container a):hover::before { transform: scale(1.05, 0.88); opacity: 0.25 }
+.inner-post-wrapper a:not(.friendsboard-list a):not(.meta.post-meta a):not(.cloud-container a):active::before { transform: scale(1.03, 0.8); opacity: 0.4 }
+.inner-post-wrapper a:not(.friendsboard-list a):not(.meta.post-meta a):not(.cloud-container a)::after { content: '\e81f'; font-family: fontello; color: currentColor; font-size: 0.8em; margin-left: 5px }
+
+.post-inner { border-radius: 0.75rem; box-shadow: 0 0 6px #00000008; }
+
+.post-item { background-color: var(--card-color) }
+
+.post--link .post-title a:hover,
+.post-body p a:hover { border-bottom-color: var(--text-color) }
+
+.post-comments .post-wrapper:before,
+.post-footer .post-wrapper:before { border-top: 1px solid var(--line-color) }
+
+.post--cover .post-header { filter: none }
+.post--cover .post-author { color: var(--line-color) }
+.post--cover .post-author:hover { color: #fff }
+
+.post--cover .post-cover+.post-footer .post-wrapper:before { border-top: 0 }
+
+.post--cover .post-body p:first-child strong { font-weight: inherit }
+
+.doc_comments { padding: 0 }
+
+
+

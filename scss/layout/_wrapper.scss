@@ -1,0 +1,54 @@
+@use '../mixin' as *;
+.wrapper {
+	position: relative;
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto
+}
+
+.wrapper:before { content: " "; display: table }
+.wrapper:after { clear: both }
+
+.form>:last-child,
+.main>:last-child,
+.nav>.nav-item:last-child,
+.wrapper>:last-child {
+	margin-bottom: 0;
+	word-break: break-word;
+}
+
+body>.wrapper {
+	max-width: 339px;
+	padding-right: 8px;
+	padding-left: 8px;
+
+	@include respond(sm) {
+		max-width: 548px;
+		padding-right: 18px;
+		padding-left: 18px;
+	}
+
+	@include respond(md) {
+		max-width: 722px;
+		padding-right: 32px;
+		padding-left: 32px;
+	}
+
+	@include respond(lg) {
+		max-width: 894px;
+		padding-right: 48px;
+		padding-left: 48px;
+	}
+
+	@include respond(xl) {
+		max-width: 1700px;
+		padding-left: 0px;
+		padding-right: 328px;
+	}
+
+	@include respond(xxl) {
+		padding-left: 35px;
+		padding-right: 365px;
+	}
+}
+

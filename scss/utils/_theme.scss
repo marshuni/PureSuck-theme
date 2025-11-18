@@ -1,0 +1,55 @@
+[data-theme="dark"] {
+	--background-color: #1d1f20;
+	--pure-color: #f2f2f2;
+	--card-color: #2b2b2b;
+	--card2-color: #2e2e2e;
+	--pure-gery-color: #424242;
+	--border-color: #333739;
+	--line-color: #363a3c;
+	--nav-color: #262a2b;
+	--nav-text-color: #c1bcb4;
+	--text-color: #c1bcb4;
+	--text2-color: #bdb7af;
+	--hover-color: #262a2b;
+	/* Dark 颜色变量 */
+
+	img { filter: brightness(0.8); }
+
+	#ZaiJPG { filter: invert(100%); }
+
+	/* Dark 颜色变量 */
+}
+
+/* Dark Mode helpers and UI bits */
+.theme-toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+.theme-toggle {
+	transition: all .3s ease;
+	width: 50px;
+	height: 50px;
+	background-color: var(--background-color);
+	border: none;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	color: var(--nav-text-color);
+	justify-content: center;
+	cursor: pointer;
+}
+
+#theme-icon { font-size: 24px; color: var(--nav-text-color) }
+
+/* Medium-zoom 图片 */
+.medium-zoom-overlay,
+.medium-zoom-image--opened { z-index: 999 }
+
+/* Pace progress color override */
+.pace .pace-progress { background: var(--themecolor) !important }
+
+/* 隐藏渲染的katex-html标签 */
+.katex-html { display: none !important }
+
+
