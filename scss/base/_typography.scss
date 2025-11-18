@@ -102,6 +102,23 @@ h3::before {
 	}
 }
 
+h1 a,
+h1 a:hover,
+h2 a,
+h2 a:hover,
+h3 a,
+h3 a:hover,
+h4 a,
+h4 a:hover,
+h5 a,
+h5 a:hover,
+h6 a,
+h6 a:hover {
+	color: inherit;
+	border-bottom: 0;
+}
+
+
 /* smaller headings / titles */
 .comment-title,
 .h4,
@@ -169,5 +186,48 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 b, strong { font-weight: 600 }
+
+.meta {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	color: #767676;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+
+.meta>.meta-item:last-child {
+	padding-right: 0
+}
+
+.meta-item {
+	display: inline;
+	padding-right: 8px;
+	white-space: nowrap;
+	cursor: pointer;
+	color: inherit;
+}
+
+.meta-item:before {
+	font-size: 18px;
+}
+
+.meta-item:hover {
+	color: #999;
+}
+
+.meta-item:hover .icon-ui:before,
+.meta-item:hover:before {
+	color: #999
+}
+
+.meta-date {
+	overflow: hidden;
+	text-overflow: ellipsis
+}
+
+.meta-count {
+	margin-left: -4px
+}
 
 

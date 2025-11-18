@@ -60,40 +60,6 @@
 	box-sizing: border-box;
 }
 
-.post { float: left; width: 100%; margin-bottom: 24px }
-
-.post-inner { position: relative; z-index: 1; overflow: hidden; float: left; width: 100% }
-
-.post-item { float: left; width: 100%; padding: 16px }
-
-// .post-wrapper { max-width: 275px }
-
-.post-body { margin-top: -16px }
-
-.post--link .post-body .post-wrapper>p:first-of-type,
-.post-title { margin-top: -7px; margin-bottom: 9px }
-
-.post-more { float: left; width: 100% }
-
-.post-excerpt:after { content: '' }
-
-.post-body ol ol,
-.post-body ol ul,
-.post-body ul ol,
-.post-body ul ul { margin-bottom: 0 }
-
-.post-body .post-more:only-child { margin-top: -8px }
-
-.post-comments .post-wrapper:before,
-.post-footer .post-wrapper:before {
-	content: '';
-	position: absolute;
-	top: -16px;
-	width: 100%
-}
-
-.post-meta .meta-item.icon::before { font-size: 22px; transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1); }
-
 [data-js~=share]:before { margin-right: 0 }
 
 [data-js~=share] .meta-count { display: none }

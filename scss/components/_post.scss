@@ -1,5 +1,6 @@
 @use '../mixin' as *;
 
+
 .post {
     float: left;
     width: 100%;
@@ -133,6 +134,11 @@
 
 .post-comments .post-wrapper:before,
 .post-footer .post-wrapper:before {
+    content: '';
+	position: absolute;
+	top: -16px;
+	width: 100%;
+
     @include respond(sm) {
         top: -24px;
     }
@@ -220,5 +226,9 @@
 
 .doc_comments { padding: 0 }
 
+.post-body ol ol,
+.post-body ol ul,
+.post-body ul ol,
+.post-body ul ul { margin-bottom: 0 }
 
-
+.post-body .post-more:only-child { margin-top: -8px }
