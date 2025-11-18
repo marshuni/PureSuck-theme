@@ -1,3 +1,5 @@
+// 定义全局排版。包括标题与正文、列表样式等。
+
 @use '../mixin' as *;
 hr {
 	position: relative;
@@ -230,4 +232,160 @@ b, strong { font-weight: 600 }
 	margin-left: -4px
 }
 
+blockquote {
+	border-radius: 0.75rem;
+	color: var(--text-color);
+	background-color: var(--pure-gery-color);
+	width: 100%;
+	padding: 16px;
+	margin-right: 0;
+	margin-left: 0;
+	font-size: 0.95rem;
+	transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
+	border: 1px solid var(--border-color);
+	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .05);
+}
 
+
+code, kbd {
+	border-radius: 0.4rem;
+	color: var(--text-color);
+	background-color: var(--pure-gery-color);
+	border: 1px solid var(--border-color);
+	margin: 0 5px;
+}
+
+ol, ul { color: var(--text-color) }
+
+ol p { margin-bottom: 0px }
+
+li:before { color: #858585 }
+
+pre {
+	border-radius: 0.5rem;
+	color: #fff;
+	background-color: #1e2021;
+	overflow-y: auto;
+	overflow-x: hidden;
+	max-height: 800px;
+	box-shadow: 0 0 6px #00000008;
+	border: 1px solid var(--border-color);
+}
+
+.post-body [href^="#fn"] { border-bottom: none }
+
+.no-bg { background-color: transparent !important }
+
+.pace .pace-progress { background: var(--themecolor) !important }
+
+.katex-html { display: none !important }
+
+
+code,
+kbd {
+	position: relative;
+	display: inline-block;
+	top: -1px;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+.form {
+	position: relative;
+	float: left;
+	width: 100%
+}
+
+.form-input {
+	float: left;
+	width: 100%;
+	max-height: 36px;
+	border: 0;
+	padding: 8px;
+	background: 0 0;
+	appearance: none;
+	color: inherit
+}
+
+.form-input-hidden { display: none }
+
+button,
+input,
+textarea { font-family: inherit; font-size: 100%; margin: 0 }
+
+input {
+	border: 1px solid var(--border-color);
+	outline: none;
+	font-size: 16px;
+	padding: 10px 10px 10px 12px;
+	border-radius: 0.75rem;
+	width: 200px;
+	box-shadow: 0 0 6px #00000008;
+}
+
+textarea { vertical-align: top }
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	box-shadow: 0 0 6px #00000008;
+	overflow: hidden;
+	text-align: left;
+	border-radius: 0.35rem;
+	margin: 1.25rem 0;
+}
+
+table thead { background-color: var(--pure-gery-color); }
+
+table th,
+table td {
+	padding: 0.4rem 1.25rem;
+	border-bottom: 1px solid var(--line-color);
+	font-size: 0.95rem
+}
+
+table tr { transition: all .3s ease; }
+
+table tr:has(td):hover { background-color: var(--hover-color); }
+
+.icon:empty:before { margin-right: 0 }
+
+.icon-ui:before { vertical-align: bottom; font-size: 20px; margin: 4px }
+
+.icon-ui-comment:before { content: "\E802" }
+.icon-ui-date:before { content: "\E80D" }
+
+a,
+a:after,
+a:before {
+	text-decoration: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+
+.avatar,
+.form,
+.form-input,
+.header-avatar,
+.list,
+.meta,
+.nav,
+.post-body [data-js~=embed],
+.post-body ol,
+.post-body ul,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+object,
+ol,
+p,
+pre,
+ul,
+.cp p {
+	margin-top: 0;
+	margin-bottom: 16px
+}

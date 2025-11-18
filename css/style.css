@@ -15,6 +15,62 @@
   /* Light 颜色变量 */
 }
 
+:root {
+  /* 边框颜色 */
+  --blue-border-color: #7f9cdc;
+  --green-border-color: #8ba394;
+  --yellow-border-color: #ccb191;
+  --red-border-color: #be8585;
+  --pink-border-color: #c487a0;
+  /* 浅色 */
+  --blue-pale-color: #dbeafe;
+  --green-pale-color: #f0fdf4;
+  --yellow-pale-color: #fef3c7;
+  --red-pale-color: #fee2e2;
+  --pink-pale-color: #f9dfe2;
+  /* 基础色 */
+  --blue-base-color: #3273dc;
+  --green-base-color: #48c774;
+  --yellow-base-color: #feb272;
+  --red-base-color: #dc3545;
+  --pink-base-color: #ea868f;
+  /* 深色 */
+  --blue-bold-color: #2563eb;
+  --green-bold-color: #166534;
+  --yellow-bold-color: #d97706;
+  --red-bold-color: #b91c1c;
+  --pink-bold-color: #DB2777;
+  /* Light 颜色变量 */
+}
+
+[data-theme=dark] {
+  /* 边框颜色 */
+  --blue-border-color: #5b77a8;
+  --green-border-color: #6b7d6e;
+  --yellow-border-color: #a88e6d;
+  --red-border-color: #9a6666;
+  --pink-border-color: #9f6c7e;
+  /* 浅色 */
+  --blue-pale-color: #8ea0bf;
+  --green-pale-color: #a8c0a8;
+  --yellow-pale-color: #c9b992;
+  --red-pale-color: #cfa1a1;
+  --pink-pale-color: #c79ba4;
+  /* 基础色 */
+  --blue-base-color: #1e4b99;
+  --green-base-color: #3b9c5e;
+  --yellow-base-color: #d18b57;
+  --red-base-color: #a12a35;
+  --pink-base-color: #c35b63;
+  /* 深色 */
+  --blue-bold-color: #0f275e;
+  --green-bold-color: #0c3a1d;
+  --yellow-bold-color: #8f4304;
+  --red-bold-color: #5e0f0f;
+  --pink-bold-color: #841247;
+  /* Dark 颜色变量 */
+}
+
 *,
 :after,
 :before {
@@ -516,6 +572,33 @@ a:after,
 a:before {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
+}
+
+.avatar,
+.form,
+.form-input,
+.header-avatar,
+.list,
+.meta,
+.nav,
+.post-body [data-js~=embed],
+.post-body ol,
+.post-body ul,
+blockquote,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+object,
+ol,
+p,
+pre,
+ul,
+.cp p {
+  margin-top: 0;
+  margin-bottom: 16px;
 }
 
 .nav {
@@ -1301,31 +1384,8 @@ textarea.ci {
   width: 120px;
 }
 
-.avatar,
-.form,
-.form-input,
-.header-avatar,
-.list,
-.meta,
-.nav,
-.post-body [data-js~=embed],
-.post-body ol,
-.post-body ul,
-blockquote,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-object,
-ol,
-p,
-pre,
-ul,
-.cp p {
-  margin-top: 0;
-  margin-bottom: 16px;
+.comment-title {
+  font-weight: 800;
 }
 
 .avatar {
@@ -1387,10 +1447,6 @@ ul,
 .post-body [href^="#fn:"] {
   margin-left: 1px;
   margin-right: 1px;
-}
-
-.comment-title {
-  font-weight: 800;
 }
 
 .avatar,
