@@ -1,30 +1,40 @@
-// 定义全局排版。包括标题与正文、列表样式等。
-
 @use '../mixin' as *;
+
+/* ------------------------------------
+ * Global Rules
+ * ------------------------------------ */
+.root,
+html {
+	font-size: 15px;
+
+	@include respond(sm) { font-size: 16px; }
+	@include respond(xxl) { font-size: 17px; }
+}
+
+body,
+.p {
+	font-size: 1rem;
+	line-height: 1.85;
+	text-align: justify;
+}
+
+/* ------------------------------------
+ * Horizontal Rule
+ * ------------------------------------ */
 hr {
 	position: relative;
 	width: calc(100% - 4px);
 	height: .125rem;
 	border: none;
-	background: var(--card-color) repeating-linear-gradient(-45deg, var(--themecolor), var(--themecolor) 0.25rem, transparent 0.25rem, transparent 0.5rem);
+	background: var(--card-color)
+		repeating-linear-gradient(-45deg, var(--themecolor), var(--themecolor) .25rem, transparent .25rem, transparent .5rem);
 	box-sizing: content-box;
 	overflow: visible;
 }
 
-.root,
-html {
-	font-size: 15px;
-
-	@include respond(sm) {
-		font-size: 16px;
-	}
-
-	@include respond(xxl) {
-		font-size: 17px;
-	}
-}
-
-/* headings */
+/* ------------------------------------
+ * Headings
+ * ------------------------------------ */
 .h1,
 .post--link .post-body .post-wrapper>p:first-of-type,
 .post-title,
@@ -36,7 +46,6 @@ h1 {
 		font-size: 2rem;
 		line-height: 48px;
 	}
-
 	@include respond(xl) {
 		font-size: 2.215rem;
 		line-height: 56px;
@@ -48,81 +57,64 @@ h2 {
 	font-size: 1.5rem;
 	line-height: 36px;
 
-	@include respond(sm) {
-		line-height: 40px;
-	}
-
-	@include respond(xl) {
-		line-height: 44px;
-	}
+	@include respond(sm) { line-height: 40px; }
+	@include respond(xl) { line-height: 44px; }
 }
 
 h2::before {
 	content: "";
-	right: 6px;
 	display: block;
+	position: relative;
 	width: 100%;
 	height: 0.45em;
 	top: 40px;
+	right: 6px;
 	background-color: var(--themecolor);
 	opacity: .25;
-	position: relative;
 }
 
-/* h3 and its marker */
+/* h3 */
 .h3,
 h3 {
 	font-size: 1.375rem;
 	line-height: 30px;
 
-	@include respond(sm) {
-		line-height: 36px;
-	}
+	@include respond(sm) { line-height: 36px; }
 }
 
 h3::before {
 	content: "";
-	right: 3px;
+	position: relative;
 	display: block;
 	width: 8px;
 	height: 8px;
+	top: 30px;
+	right: 3px;
+	border-radius: 50%;
 	background-color: var(--themecolor);
 	opacity: .25;
-	position: relative;
-	border-radius: 50%;
-	top: 30px;
 
 	@include respond(sm) {
-		width: 9px;
-		height: 9px;
+		width: 9px; height: 9px;
 	}
-
 	@include respond(xl) {
-		width: 10px;
-		height: 10px;
+		width: 10px; height: 10px;
 		top: 34px;
 	}
 }
 
-h1 a,
-h1 a:hover,
-h2 a,
-h2 a:hover,
-h3 a,
-h3 a:hover,
-h4 a,
-h4 a:hover,
-h5 a,
-h5 a:hover,
-h6 a,
-h6 a:hover {
+/* Heading-links inherit color */
+h1 a, h1 a:hover,
+h2 a, h2 a:hover,
+h3 a, h3 a:hover,
+h4 a, h4 a:hover,
+h5 a, h5 a:hover,
+h6 a, h6 a:hover {
 	color: inherit;
 	border-bottom: 0;
 }
 
-
-/* smaller headings / titles */
-.comment-title,
+/* Smaller headings */
 .h4,
 .h5,
 .h6,
@@ -142,53 +134,50 @@ h4 {
 	}
 }
 
-/* body / paragraphs */
-.p,
-body {
-	font-size: 1rem;
-	line-height: 1.85;
-	text-align: justify;
-}
-
-/* small text variants */
+/* ------------------------------------
+ * Font size variants
+ * ------------------------------------ */
+.s1,
 .header-about,
 .header-form,
 .post-body [href^="#fn:"],
-.s1,
-small {
-	font-size: .875rem;
-}
+small { font-size: .875rem; }
 
 .avatar,
 .meta,
 .nav,
-.s2 {
-	font-size: .75rem;
-}
+.s2 { font-size: .75rem; }
 
-.s3 {
-	font-size: .666rem;
-}
+.s3 { font-size: .666rem; }
 
+/* ------------------------------------
+ * Highlighting: footnote flash
+ * ------------------------------------ */
 @keyframes yellowflash-bg {
 	from { background: var(--themecolor); }
 	to { background: transparent; }
 }
-
 .footnotes :target { animation: yellowflash-bg 1s; }
 
-/* font-family + base text color */
+/* ------------------------------------
+ * Font Family + Color
+ * ------------------------------------ */
 body,
 .post--cover .post-body .post-wrapper>p:first-child,
 .comment-title,
-h1,h2,h3,h4,h5,h6 {
-	font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Open Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+	"Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+	SimSun, sans-serif;
 	font-weight: 400;
 	color: var(--text-color);
 }
 
-b, strong { font-weight: 600 }
+strong, b { font-weight: 600; }
 
+/* ------------------------------------
+ * Meta Info
+ * ------------------------------------ */
 .meta {
 	display: flex;
 	justify-content: space-between;
@@ -198,9 +187,7 @@ b, strong { font-weight: 600 }
 	letter-spacing: 2px;
 }
 
-.meta>.meta-item:last-child {
-	padding-right: 0
-}
+.meta>.meta-item:last-child { padding-right: 0; }
 
 .meta-item {
 	display: inline;
@@ -208,161 +195,180 @@ b, strong { font-weight: 600 }
 	white-space: nowrap;
 	cursor: pointer;
 	color: inherit;
+
+	&:before { font-size: 18px; }
+	&:hover { color: #999; }
+
+	&:hover .icon-ui:before,
+	&:hover:before { color: #999; }
 }
 
-.meta-item:before {
-	font-size: 18px;
-}
+.meta-date { overflow: hidden; text-overflow: ellipsis; }
+.meta-count { margin-left: -4px; }
 
-.meta-item:hover {
-	color: #999;
-}
-
-.meta-item:hover .icon-ui:before,
-.meta-item:hover:before {
-	color: #999
-}
-
-.meta-date {
-	overflow: hidden;
-	text-overflow: ellipsis
-}
-
-.meta-count {
-	margin-left: -4px
-}
-
+/* ------------------------------------
+ * Blockquote
+ * ------------------------------------ */
 blockquote {
-	border-radius: 0.75rem;
-	color: var(--text-color);
-	background-color: var(--pure-gery-color);
 	width: 100%;
 	padding: 16px;
-	margin-right: 0;
-	margin-left: 0;
+	margin: 0;
 	font-size: 0.95rem;
-	transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
-	border: 1px solid var(--border-color);
-	box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, .05);
-}
 
-
-code, kbd {
-	border-radius: 0.4rem;
 	color: var(--text-color);
 	background-color: var(--pure-gery-color);
+	border-radius: 0.75rem;
 	border: 1px solid var(--border-color);
-	margin: 0 5px;
+	box-shadow: 1px 1px 3px rgba(0,0,0,.05);
+
+	transition: all .3s cubic-bezier(0.345, 0.045, 0.345, 1);
 }
 
-ol, ul { color: var(--text-color) }
-
-ol p { margin-bottom: 0px }
-
-li:before { color: #858585 }
-
-pre {
-	border-radius: 0.5rem;
-	color: #fff;
-	background-color: #1e2021;
-	overflow-y: auto;
-	overflow-x: hidden;
-	max-height: 800px;
-	box-shadow: 0 0 6px #00000008;
-	border: 1px solid var(--border-color);
-}
-
-.post-body [href^="#fn"] { border-bottom: none }
-
-.no-bg { background-color: transparent !important }
-
-.pace .pace-progress { background: var(--themecolor) !important }
-
-.katex-html { display: none !important }
-
-
+/* ------------------------------------
+ * Inline Code / KBD
+ * ------------------------------------ */
 code,
 kbd {
 	position: relative;
 	display: inline-block;
 	top: -1px;
-	padding-right: 8px;
-	padding-left: 8px;
+
+	margin: 0 5px;
+	padding: 0 8px;
+
+	border-radius: 0.4rem;
+	color: var(--text-color);
+	background-color: var(--pure-gery-color);
+	border: 1px solid var(--border-color);
 }
 
+/* ------------------------------------
+ * Lists
+ * ------------------------------------ */
+ol,
+ul { color: var(--text-color); }
+
+ol p { margin-bottom: 0; }
+
+li:before { color: #858585; }
+
+/* ------------------------------------
+ * Preformatted Blocks
+ * ------------------------------------ */
+pre {
+	color: #fff;
+	background-color: #1e2021;
+
+	max-height: 800px;
+	overflow-y: auto;
+	overflow-x: hidden;
+
+	border-radius: 0.5rem;
+	box-shadow: 0 0 6px #00000008;
+	border: 1px solid var(--border-color);
+}
+
+/* ------------------------------------
+ * Forms
+ * ------------------------------------ */
 .form {
 	position: relative;
 	float: left;
-	width: 100%
+	width: 100%;
 }
 
 .form-input {
 	float: left;
 	width: 100%;
 	max-height: 36px;
-	border: 0;
+
 	padding: 8px;
-	background: 0 0;
+	border: 0;
+	background: none;
+	color: inherit;
 	appearance: none;
-	color: inherit
 }
 
-.form-input-hidden { display: none }
+.form-input-hidden { display: none; }
 
 button,
 input,
-textarea { font-family: inherit; font-size: 100%; margin: 0 }
-
-input {
-	border: 1px solid var(--border-color);
-	outline: none;
-	font-size: 16px;
-	padding: 10px 10px 10px 12px;
-	border-radius: 0.75rem;
-	width: 200px;
-	box-shadow: 0 0 6px #00000008;
+textarea {
+	font-family: inherit;
+	font-size: 100%;
+	margin: 0;
 }
 
-textarea { vertical-align: top }
+input {
+	width: 200px;
+	padding: 10px 12px;
+	font-size: 16px;
 
+	border: 1px solid var(--border-color);
+	border-radius: 0.75rem;
+
+	box-shadow: 0 0 6px #00000008;
+	outline: none;
+}
+
+textarea { vertical-align: top; }
+
+/* ------------------------------------
+ * Tables
+ * ------------------------------------ */
 table {
 	width: 100%;
 	border-collapse: collapse;
+	margin: 1.25rem 0;
+	border-radius: 0.35rem;
+	text-align: left;
+
 	box-shadow: 0 0 6px #00000008;
 	overflow: hidden;
-	text-align: left;
-	border-radius: 0.35rem;
-	margin: 1.25rem 0;
 }
 
-table thead { background-color: var(--pure-gery-color); }
+thead { background-color: var(--pure-gery-color); }
 
-table th,
-table td {
+th,
+td {
 	padding: 0.4rem 1.25rem;
+	font-size: 0.95rem;
 	border-bottom: 1px solid var(--line-color);
-	font-size: 0.95rem
 }
 
-table tr { transition: all .3s ease; }
+tr {
+	transition: all .3s ease;
 
-table tr:has(td):hover { background-color: var(--hover-color); }
+	&:has(td):hover { background-color: var(--hover-color); }
+}
 
-.icon:empty:before { margin-right: 0 }
+/* ------------------------------------
+ * Icons
+ * ------------------------------------ */
+.icon:empty:before { margin-right: 0; }
 
-.icon-ui:before { vertical-align: bottom; font-size: 20px; margin: 4px }
+.icon-ui:before {
+	vertical-align: bottom;
+	font-size: 20px;
+	margin: 4px;
+}
 
-.icon-ui-comment:before { content: "\E802" }
-.icon-ui-date:before { content: "\E80D" }
+.icon-ui-comment:before { content: "\E802"; }
+.icon-ui-date:before { content: "\E80D"; }
 
+/* ------------------------------------
+ * Links
+ * ------------------------------------ */
 a,
-a:after,
-a:before {
+a::before,
+a::after {
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
 }
 
-
+/* ------------------------------------
+ * Margin Normalization
+ * ------------------------------------ */
 .avatar,
 .form,
 .form-input,
@@ -374,12 +380,7 @@ a:before {
 .post-body ol,
 .post-body ul,
 blockquote,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1, h2, h3, h4, h5, h6,
 object,
 ol,
 p,
@@ -387,5 +388,11 @@ pre,
 ul,
 .cp p {
 	margin-top: 0;
-	margin-bottom: 16px
+	margin-bottom: 16px;
 }
+
+/* Misc */
+.post-body [href^="#fn"] { border-bottom: none; }
+.no-bg { background-color: transparent !important; }
+.pace .pace-progress { background: var(--themecolor) !important; }
+.katex-html { display: none !important; }
